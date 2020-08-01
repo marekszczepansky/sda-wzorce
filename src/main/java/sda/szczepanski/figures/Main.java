@@ -13,6 +13,9 @@ public class Main {
         System.out.println("Podaj 2 boki trójkąta prostokatnego");
         figures[1] = new RightTriangle(scanner.nextDouble(), scanner.nextDouble());
 
+        System.out.println("Podaj bok kwadratu");
+        figures[1] = new Square(scanner.nextDouble());
+
         for (Figure figure : figures) {
             System.out.println(figure.prepareDescription());
         }
