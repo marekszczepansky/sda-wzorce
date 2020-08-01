@@ -35,5 +35,9 @@ class FigureTest {
     @Test
     void prepareDescription() {
         assertEquals(EXPECTED_DESCRIPTION, testFigureMock.prepareDescription());
+        // poniższe sprawdzenia nie są wymagane, Mockito wykonuje je automatycznie
+        Mockito.verify(testFigureMock, Mockito.times(1)).getType();
+        Mockito.verify(testFigureMock, Mockito.times(1)).calculateArea();
+        Mockito.verify(testFigureMock, Mockito.times(1)).calculatePerimeter();
     }
 }
