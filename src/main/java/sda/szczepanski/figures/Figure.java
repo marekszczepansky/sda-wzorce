@@ -5,8 +5,12 @@ public interface Figure {
     double calculateArea();
 
     default String prepareDescription() {
-        return this.getClass().getSimpleName() +
+        return this.getType() +
                 "\npole " + this.calculateArea() +
                 "\nobwód " + this.calculatePerimeter();
+    }
+
+    default String getType() {
+        return this.getClass().getSimpleName();
     }
 }
