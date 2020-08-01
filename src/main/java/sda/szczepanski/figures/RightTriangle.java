@@ -12,12 +12,12 @@ public class RightTriangle implements Figure {
     }
 
     @Override
-    public double getCircumference() {
+    public double calculatePerimeter() {
         return base + height + hypotenuse;
     }
 
     @Override
-    public double getArea() {
+    public double calculateArea() {
         return base * height / 2.0;
     }
 }

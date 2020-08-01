@@ -8,12 +8,12 @@ public class Circle implements Figure {
     }
 
     @Override
-    public double getCircumference() {
+    public double calculatePerimeter() {
         return 2 * Math.PI * radius;
     }
 
     @Override
-    public double getArea() {
+    public double calculateArea() {
         return Math.PI * radius * radius;
     }
 }
