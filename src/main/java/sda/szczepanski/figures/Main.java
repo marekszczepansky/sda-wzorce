@@ -14,9 +14,7 @@ public class Main {
         figures[1] = new RightTriangle(scanner.nextDouble(), scanner.nextDouble());
 
         for (Figure figure : figures) {
-            System.out.println(figure.getClass().getSimpleName());
-            System.out.println("pole " + figure.calculateArea());
-            System.out.println("obwód " + figure.calculatePerimeter());
+            System.out.println(figure.prepareDescription());
         }
     }
 }
