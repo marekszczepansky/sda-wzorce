@@ -1,10 +1,7 @@
 package sda.szczepanski.figures;
 
-public class Square implements SuperFigure {
+public final class Square extends AbstractSuperFigure {
     private double side;
-    private Colour colour;
-    private double x;
-    private double y;
 
     public Square(double side) {
         this.side = side;
@@ -21,32 +18,6 @@ public class Square implements SuperFigure {
     @Override
     public double calculateArea() {
         return side * side;
-    }
-
-    @Override
-    public void setColour(Colour colour) {
-        this.colour = colour;
-    }
-
-    @Override
-    public Colour getColour() {
-        return colour;
-    }
-
-    @Override
-    public void setCoordinates(double x, double y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    @Override
-    public double getX() {
-        return x;
-    }
-
-    @Override
-    public double getY() {
-        return y;
     }
 
     // implementacja uproszczona i niepolecana

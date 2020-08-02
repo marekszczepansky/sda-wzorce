@@ -1,11 +1,8 @@
 package sda.szczepanski.figures;
 
-public class Rectangle implements SuperFigure {
+public final class Rectangle extends AbstractSuperFigure {
     private double sideA;
     private double sideB;
-    private Colour colour;
-    private double x;
-    private double y;
 
     public Rectangle(double sideA, double sideB) {
         this.sideA = sideA;
@@ -22,29 +19,4 @@ public class Rectangle implements SuperFigure {
         return sideA * sideB;
     }
 
-    @Override
-    public void setColour(Colour colour) {
-        this.colour = colour;
-    }
-
-    @Override
-    public Colour getColour() {
-        return colour;
-    }
-
-    @Override
-    public void setCoordinates(double x, double y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    @Override
-    public double getX() {
-        return x;
-    }
-
-    @Override
-    public double getY() {
-        return y;
-    }
 }
