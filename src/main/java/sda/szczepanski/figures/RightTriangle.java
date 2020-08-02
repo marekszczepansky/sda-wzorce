@@ -14,6 +14,15 @@ public class RightTriangle implements SuperFigure {
         this.hypotenuse = Math.sqrt(this.base * this.base + this.height * this.height);
     }
 
+    private RightTriangle(Builder builder) {
+        this.base = builder.base;
+        this.colour = builder.colour;
+        this.height = builder.height;
+        this.x = builder.x;
+        this.y = builder.y;
+        this.hypotenuse = Math.sqrt(this.base * this.base + this.height * this.height);
+    }
+
     @Override
     public double calculatePerimeter() {
         return base + height + hypotenuse;
@@ -48,5 +57,21 @@ public class RightTriangle implements SuperFigure {
     @Override
     public double getY() {
         return y;
+    }
+
+    public static class Builder {
+
+        private Colour colour;
+        private double height;
+        private double x;
+        private double y;
+        private double base;
+
+        RightTriangle build() {
+            return new RightTriangle(this);
+        }
+
+        // TODO: Proszę zaimplementować metody buildera
+
     }
 }
