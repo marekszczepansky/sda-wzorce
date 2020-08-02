@@ -6,6 +6,16 @@ public abstract class AbstractSuperFigure implements SuperFigure {
     protected double y;
 
     @Override
+    public String prepareDescription() {
+        return SuperFigure.super.prepareDescription() +
+                "\nkolor " + this.getColour() +
+                String.format("\npozycja (%f, %f)",
+                        this.getX(),
+                        this.getY()
+                );
+    }
+
+    @Override
     public void setColour(Colour colour) {
         this.colour = colour;
     }

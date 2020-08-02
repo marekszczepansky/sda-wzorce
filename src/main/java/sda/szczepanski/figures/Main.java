@@ -8,10 +8,19 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj promień");
-        figures[0] = new Circle(scanner.nextDouble());
+        figures[0] = new Circle.Builder()
+                .withRadius(scanner.nextDouble())
+                .withColour(Colourable.Colour.RED)
+                .withCoordinates(1, 3)
+                .build();
 
         System.out.println("Podaj 2 boki trójkąta prostokatnego");
-        figures[1] = new RightTriangle(scanner.nextDouble(), scanner.nextDouble());
+        figures[1] = new RightTriangle.Builder()
+                .withBase(scanner.nextDouble())
+                .withHeight(scanner.nextDouble())
+                .withColour(Colourable.Colour.GREEN)
+                .withCoordinates(-3, -6)
+                .build();
 
         System.out.println("Podaj bok kwadratu");
         figures[2] = new Square(scanner.nextDouble());
