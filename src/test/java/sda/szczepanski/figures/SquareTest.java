@@ -17,7 +17,11 @@ class SquareTest {
 
     @BeforeEach
     void setUp() {
-        testSquare = new Square(TEST_SIDE);
+        testSquare = new Square.Builder()
+                .withSide(TEST_SIDE)
+                .withColour(TEST_COLOUR)
+                .withCoordinates(TEST_X, TEST_Y)
+                .build();
     }
 
     @Test
@@ -31,15 +35,13 @@ class SquareTest {
     }
 
     @Test
-    void shouldSetCoordinates() {
-        testSquare.setCoordinates(TEST_X, TEST_Y);
+    void shouldSetCoordinatesByBuilder() {
         assertEquals(TEST_X, testSquare.getX());
         assertEquals(TEST_Y, testSquare.getY());
     }
 
     @Test
-    void shouldSedColour() {
-        testSquare.setColour(TEST_COLOUR);
+    void shouldSetColourByBuilder() {
         assertEquals(TEST_COLOUR, testSquare.getColour());
     }
 }

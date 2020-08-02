@@ -45,4 +45,26 @@ public class Square implements SuperFigure {
     public double getY() {
         return y;
     }
+
+    public static class Builder {
+
+        Square build(){
+            return new Square(-1.0);
+        }
+
+        Builder withSide(double side){
+            // ...
+            return this;
+        }
+
+        Builder withColour(Colour colour) {
+            // ...
+            return this;
+        }
+
+        Builder withCoordinates(double x, double y){
+            // ...
+            return this;
+        }
+    }
 }
