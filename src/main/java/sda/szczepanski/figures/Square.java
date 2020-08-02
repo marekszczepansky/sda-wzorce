@@ -10,6 +10,9 @@ public class Square implements SuperFigure {
         this.side = side;
     }
 
+    private Square() {
+    }
+
     @Override
     public double calculatePerimeter() {
         return 4 * side;
@@ -47,23 +50,31 @@ public class Square implements SuperFigure {
     }
 
     public static class Builder {
+        private Square instance;
 
-        Square build(){
-            return new Square(-1.0);
+        public Builder() {
+            instance = new Square();
         }
 
-        Builder withSide(double side){
-            // ...
+        Square build() {
+            if (instance.side <= 0) {
+                throw new IllegalStateException("Square side must be breated than 0");
+            }
+            return instance;
+        }
+
+        Builder withSide(double side) {
+            instance.side = side;
             return this;
         }
 
         Builder withColour(Colour colour) {
-            // ...
+            instance.colour = colour;
             return this;
         }
 
-        Builder withCoordinates(double x, double y){
-            // ...
+        Builder withCoordinates(double x, double y) {
+            instance.setCoordinates(x, y);
             return this;
         }
     }

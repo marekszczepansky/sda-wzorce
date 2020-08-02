@@ -10,6 +10,9 @@ public class Circle implements SuperFigure {
         this.radius = radius;
     }
 
+    private Circle() {
+    }
+
     @Override
     public double calculatePerimeter() {
         return 2 * Math.PI * radius;
@@ -44,5 +47,37 @@ public class Circle implements SuperFigure {
     @Override
     public double getY() {
         return this.y;
+    }
+
+    public static class Builder {
+
+        private final Circle prototype;
+
+        public Builder() {
+            prototype = new Circle();
+        }
+
+        Circle build(){
+            if (prototype.radius <= 0) {
+                throw new IllegalStateException("Circle radius must be greater than zero");
+            }
+          return prototype;
+        };
+
+        Builder withRadius(double radius) {
+          prototype.radius = radius;
+          return this;
+        };
+
+        Builder withColour(Colour colour) {
+          prototype.colour = colour;
+          return this;
+        };
+
+        Builder withCoordinates(double x, double y) {
+          prototype.x = x;
+          prototype.y = y;
+          return this;
+        };
     }
 }
