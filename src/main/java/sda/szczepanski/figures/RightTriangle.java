@@ -1,9 +1,12 @@
 package sda.szczepanski.figures;
 
-public class RightTriangle implements Figure {
+public class RightTriangle implements SuperFigure {
     private double base;
     private double height;
     private double hypotenuse;
+    private Colour colour;
+    private double x;
+    private double y;
 
     public RightTriangle(double base, double height) {
         this.base = base;
@@ -19,5 +22,31 @@ public class RightTriangle implements Figure {
     @Override
     public double calculateArea() {
         return base * height / 2.0;
+    }
+
+    @Override
+    public void setColour(Colour colour) {
+        this.colour = colour;
+    }
+
+    @Override
+    public Colour getColour() {
+        return colour;
+    }
+
+    @Override
+    public void setCoordinates(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public double getX() {
+        return x;
+    }
+
+    @Override
+    public double getY() {
+        return y;
     }
 }
