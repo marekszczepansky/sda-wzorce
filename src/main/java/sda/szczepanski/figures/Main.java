@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Figure[] figures = new Figure[2];
+        Figure[] figures = new Figure[4];
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj promień");
@@ -14,7 +14,10 @@ public class Main {
         figures[1] = new RightTriangle(scanner.nextDouble(), scanner.nextDouble());
 
         System.out.println("Podaj bok kwadratu");
-        figures[1] = new Square(scanner.nextDouble());
+        figures[2] = new Square(scanner.nextDouble());
+
+        System.out.println("Podaj boki prostokąta");
+        figures[3] = new Rectangle(scanner.nextDouble(), scanner.nextDouble());
 
         for (Figure figure : figures) {
             System.out.println(figure.prepareDescription());
