@@ -9,7 +9,6 @@ public class Rectangle implements Figure {
         this.sideB = sideB;
     }
 
-
     @Override
     public double calculatePerimeter() {
         return 2 * (sideA + sideB);
