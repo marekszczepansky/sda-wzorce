@@ -49,6 +49,8 @@ public class Circle implements SuperFigure {
         return this.y;
     }
 
+    // implementacja uproszczona i niepolecana
+    // może wpływać na logike konstruktora
     public static class Builder {
 
         private final Circle prototype;

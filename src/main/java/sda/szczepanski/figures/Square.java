@@ -49,6 +49,8 @@ public class Square implements SuperFigure {
         return y;
     }
 
+    // implementacja uproszczona i niepolecana
+    // może wpływać na logike konstruktora
     public static class Builder {
         private Square instance;
 

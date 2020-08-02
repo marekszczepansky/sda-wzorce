@@ -68,10 +68,31 @@ public class RightTriangle implements SuperFigure {
         private double base;
 
         RightTriangle build() {
+            if (height <= 0 || base <= 0) {
+                throw new IllegalStateException("Base and height must be greater than 0");
+            }
             return new RightTriangle(this);
         }
 
-        // TODO: Proszę zaimplementować metody buildera
+        Builder withBase(double base) {
+            this.base = base;
+            return this;
+        }
 
+        Builder withHeight(double height) {
+            this.height = height;
+            return this;
+        }
+
+        Builder withColour(Colour colour) {
+            this.colour = colour;
+            return this;
+        }
+
+        Builder withCoordinates(double x, double y) {
+            this.x = x;
+            this.y = y;
+            return this;
+        }
     }
 }
