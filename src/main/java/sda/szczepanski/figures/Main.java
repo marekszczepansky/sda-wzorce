@@ -22,11 +22,20 @@ public class Main {
                 .withCoordinates(-3, -6)
                 .build();
 
+        FigureFactory redFigureFactory = new FigureFactory(
+                Colourable.Colour.RED,
+                1.0,
+                2.0);
         System.out.println("Podaj bok kwadratu");
-        figures[2] = new Square(scanner.nextDouble());
+        figures[2] = redFigureFactory.createFigure(
+                FigureFactory.FigureType.SQUARE,
+                scanner.nextDouble());
 
         System.out.println("Podaj boki prostokąta");
-        figures[3] = new Rectangle(scanner.nextDouble(), scanner.nextDouble());
+        figures[3] = redFigureFactory.createFigure(
+                FigureFactory.FigureType.RECTANGLE,
+                scanner.nextDouble(),
+                scanner.nextDouble());
 
         for (Figure figure : figures) {
             System.out.println(figure.prepareDescription());
