@@ -3,12 +3,7 @@ package sda.szczepanski.figures;
 public final class Circle extends AbstractSuperFigure {
     private double radius;
 
-    public Circle(double radius) {
-        this.radius = radius;
-    }
-
-    private Circle() {
-    }
+    private Circle() { }
 
     @Override
     public double calculatePerimeter() {
@@ -30,24 +25,24 @@ public final class Circle extends AbstractSuperFigure {
             prototype = new Circle();
         }
 
-        Circle build(){
+        public Circle build(){
             if (prototype.radius <= 0) {
                 throw new IllegalStateException("Circle radius must be greater than zero");
             }
           return prototype;
         }
 
-        Builder withRadius(double radius) {
+        public Builder withRadius(double radius) {
           prototype.radius = radius;
           return this;
         }
 
-        Builder withColour(Colour colour) {
+        public Builder withColour(Colour colour) {
           prototype.colour = colour;
           return this;
         }
 
-        Builder withCoordinates(double x, double y) {
+        public Builder withCoordinates(double x, double y) {
           prototype.x = x;
           prototype.y = y;
           return this;

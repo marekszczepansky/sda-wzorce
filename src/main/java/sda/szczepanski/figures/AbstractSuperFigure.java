@@ -16,19 +16,8 @@ public abstract class AbstractSuperFigure implements SuperFigure {
     }
 
     @Override
-    public void setColour(Colour colour) {
-        this.colour = colour;
-    }
-
-    @Override
     public Colour getColour() {
         return this.colour;
-    }
-
-    @Override
-    public void setCoordinates(double x, double y) {
-        this.x = x;
-        this.y = y;
     }
 
     @Override

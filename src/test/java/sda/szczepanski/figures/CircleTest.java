@@ -14,7 +14,7 @@ class CircleTest {
 
     @BeforeEach
     void setUp() {
-        testCircle = new Circle(TEST_RADIUS);
+        testCircle = new Circle.Builder().withRadius(TEST_RADIUS).build();
     }
 
     @Test

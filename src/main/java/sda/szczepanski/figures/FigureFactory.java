@@ -14,38 +14,11 @@ public class FigureFactory {
     }
 
     public static SuperFigure createDefaultFigure(FigureType figureType, double size){
-        switch (figureType) {
-            case CIRCLE:
-                return new Circle.Builder()
-                        .withRadius(size)
-                        .withColour(DEFAULT_COLOUR)
-                        .withCoordinates(DEFAULT_X_COORDINATE, DEFAULT_Y_COORDINATE)
-                        .build();
-            case SQUARE:
-                return new Square.Builder()
-                        .withSide(size)
-                        .withColour(DEFAULT_COLOUR)
-                        .withCoordinates(DEFAULT_X_COORDINATE, DEFAULT_Y_COORDINATE)
-                        .build();
-            default:
-                throw new IllegalArgumentException("This figure requires more size arguments");
-        }
+        return getSuperFigure(figureType, size, DEFAULT_COLOUR, DEFAULT_X_COORDINATE, DEFAULT_Y_COORDINATE);
     };
 
     public static SuperFigure createDefaultFigure(FigureType figureType, double sizeA, double sizeB){
-        switch (figureType) {
-            case RIGHT_TRIANGLE:
-                return new RightTriangle.Builder()
-                        .withBase(sizeA)
-                        .withHeight(sizeB)
-                        .withColour(DEFAULT_COLOUR)
-                        .withCoordinates(DEFAULT_X_COORDINATE, DEFAULT_Y_COORDINATE)
-                        .build();
-            case RECTANGLE:
-                return new Rectangle(sizeA, sizeB);
-            default:
-                throw new IllegalArgumentException("This figure requires only one size argument");
-        }
+        return getSuperFigure(figureType, sizeA, sizeB, DEFAULT_COLOUR, DEFAULT_X_COORDINATE, DEFAULT_Y_COORDINATE);
     };
 
     public FigureFactory(Colourable.Colour defaultColour,
@@ -55,38 +28,52 @@ public class FigureFactory {
         this.defaultXCoordinate = defaultXCoordinate;
         this.defaultYCoordinate = defaultYCoordinate;
     }
+
     public SuperFigure createFigure(FigureType figureType, double size){
+        return getSuperFigure(figureType, size, defaultColour, defaultXCoordinate, defaultYCoordinate);
+    }
+
+    public SuperFigure createFigure(FigureType figureType, double sizeA, double sizeB){
+        return getSuperFigure(figureType, sizeA, sizeB, defaultColour, defaultXCoordinate, defaultYCoordinate);
+    }
+
+    private static SuperFigure getSuperFigure(FigureType figureType, double size, Colourable.Colour colour, double defaultXCoordinate, double defaultYCoordinate) {
         switch (figureType) {
             case CIRCLE:
                 return new Circle.Builder()
                         .withRadius(size)
-                        .withColour(defaultColour)
+                        .withColour(colour)
                         .withCoordinates(defaultXCoordinate, defaultYCoordinate)
                         .build();
             case SQUARE:
                 return new Square.Builder()
                         .withSide(size)
-                        .withColour(defaultColour)
+                        .withColour(colour)
                         .withCoordinates(defaultXCoordinate, defaultYCoordinate)
                         .build();
             default:
                 throw new IllegalArgumentException("This figure requires more size arguments");
         }
-    };
+    }
 
-    public SuperFigure createFigure(FigureType figureType, double sizeA, double sizeB){
+    private static SuperFigure getSuperFigure(FigureType figureType, double sizeA, double sizeB, Colourable.Colour colour, double defaultXCoordinate, double defaultYCoordinate) {
         switch (figureType) {
             case RIGHT_TRIANGLE:
                 return new RightTriangle.Builder()
                         .withBase(sizeA)
                         .withHeight(sizeB)
-                        .withColour(defaultColour)
+                        .withColour(colour)
                         .withCoordinates(defaultXCoordinate, defaultYCoordinate)
                         .build();
             case RECTANGLE:
-                return new Rectangle(sizeA, sizeB);
+                return new Rectangle.Builder()
+                        .withSideA(sizeA)
+                        .withSideB(sizeB)
+                        .withColour(colour)
+                        .withCoordinates(defaultXCoordinate, defaultYCoordinate)
+                        .build();
             default:
                 throw new IllegalArgumentException("This figure requires only one size argument");
         }
-    };
+    }
 }

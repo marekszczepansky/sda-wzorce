@@ -5,12 +5,6 @@ public final class RightTriangle extends AbstractSuperFigure {
     private double height;
     private double hypotenuse;
 
-    public RightTriangle(double base, double height) {
-        this.base = base;
-        this.height = height;
-        this.hypotenuse = Math.sqrt(this.base * this.base + this.height * this.height);
-    }
-
     private RightTriangle(Builder builder) {
         this.base = builder.base;
         this.colour = builder.colour;
@@ -30,38 +24,36 @@ public final class RightTriangle extends AbstractSuperFigure {
         return base * height / 2.0;
     }
 
-
     public static class Builder {
 
-        private Colour colour;
         private double height;
+        private double base;
+        private Colour colour;
         private double x;
         private double y;
-        private double base;
 
-        RightTriangle build() {
+        public RightTriangle build() {
             if (height <= 0 || base <= 0) {
                 throw new IllegalStateException("Base and height must be greater than 0");
             }
             return new RightTriangle(this);
         }
 
-        Builder withBase(double base) {
+        public Builder withBase(double base) {
             this.base = base;
             return this;
         }
-
-        Builder withHeight(double height) {
+        public Builder withHeight(double height) {
             this.height = height;
             return this;
         }
 
-        Builder withColour(Colour colour) {
+        protected Builder withColour(Colour colour) {
             this.colour = colour;
             return this;
         }
 
-        Builder withCoordinates(double x, double y) {
+        protected Builder withCoordinates(double x, double y) {
             this.x = x;
             this.y = y;
             return this;

@@ -5,16 +5,17 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Figure[] figures = new Figure[4];
+        final Logger logger = Logger.getInstance();
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj promień");
+        logger.writeLine("Podaj promień");
         figures[0] = new Circle.Builder()
                 .withRadius(scanner.nextDouble())
                 .withColour(Colourable.Colour.RED)
                 .withCoordinates(1, 3)
                 .build();
 
-        System.out.println("Podaj 2 boki trójkąta prostokatnego");
+        logger.writeLine("Podaj 2 boki trójkąta prostokatnego");
         figures[1] = new RightTriangle.Builder()
                 .withBase(scanner.nextDouble())
                 .withHeight(scanner.nextDouble())
@@ -26,19 +27,19 @@ public class Main {
                 Colourable.Colour.RED,
                 1.0,
                 2.0);
-        System.out.println("Podaj bok kwadratu");
+        logger.writeLine("Podaj bok kwadratu");
         figures[2] = redFigureFactory.createFigure(
                 FigureFactory.FigureType.SQUARE,
                 scanner.nextDouble());
 
-        System.out.println("Podaj boki prostokąta");
+        logger.writeLine("Podaj boki prostokąta");
         figures[3] = redFigureFactory.createFigure(
                 FigureFactory.FigureType.RECTANGLE,
                 scanner.nextDouble(),
                 scanner.nextDouble());
 
         for (Figure figure : figures) {
-            System.out.println(figure.prepareDescription());
+            logger.writeLine(figure.prepareDescription());
         }
     }
 }

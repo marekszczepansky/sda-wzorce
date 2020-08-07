@@ -15,7 +15,8 @@ class RectangleTest {
 
     @BeforeEach
     void setUp() {
-        testRectangle = new Rectangle(TEST_SIDE_A, TEST_SIDE_B);
+        testRectangle = new Rectangle.Builder()
+                .withSideA(TEST_SIDE_A).withSideB(TEST_SIDE_B).build();
     }
 
     @Test

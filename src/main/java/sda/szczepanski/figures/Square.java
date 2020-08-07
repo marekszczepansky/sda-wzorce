@@ -3,12 +3,7 @@ package sda.szczepanski.figures;
 public final class Square extends AbstractSuperFigure {
     private double side;
 
-    public Square(double side) {
-        this.side = side;
-    }
-
-    private Square() {
-    }
+    private Square() { }
 
     @Override
     public double calculatePerimeter() {
@@ -29,25 +24,26 @@ public final class Square extends AbstractSuperFigure {
             instance = new Square();
         }
 
-        Square build() {
+        public Square build() {
             if (instance.side <= 0) {
                 throw new IllegalStateException("Square side must be breated than 0");
             }
             return instance;
         }
 
-        Builder withSide(double side) {
+        public Builder withSide(double side) {
             instance.side = side;
             return this;
         }
 
-        Builder withColour(Colour colour) {
+        public Builder withColour(Colour colour) {
             instance.colour = colour;
             return this;
         }
 
-        Builder withCoordinates(double x, double y) {
-            instance.setCoordinates(x, y);
+        public Builder withCoordinates(double x, double y) {
+            instance.x = x;
+            instance.y = y;
             return this;
         }
     }

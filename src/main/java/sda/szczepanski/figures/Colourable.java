@@ -5,7 +5,6 @@ public interface Colourable {
         RED,GREEN, BLUE
     }
 
-    void setColour(Colour colour);
     Colour getColour();
 
 }

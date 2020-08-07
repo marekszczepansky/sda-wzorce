@@ -21,7 +21,7 @@ class FigureTest {
                     "\nobwód " + TEST_PERIMETER;
 
     @Mock
-    // zastepuje         testFigureMock = Mockito.mock(Figure.class);
+    // zastepuje testFigureMock = Mockito.mock(Figure.class);
     private Figure testFigureMock;
 
     @BeforeEach
