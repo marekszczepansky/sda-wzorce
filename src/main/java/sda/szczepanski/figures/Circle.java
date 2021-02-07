@@ -1,6 +1,7 @@
 package sda.szczepanski.figures;
 
 public class Circle implements Figure {
+    public static final String TYPE_NAME = "Koło";
     private double radius;
 
     public Circle(double radius) {
@@ -15,5 +16,10 @@ public class Circle implements Figure {
     @Override
     public double calculateArea() {
         return Math.PI * radius * radius;
+    }
+
+    @Override
+    public String getType() {
+        return TYPE_NAME;
     }
 }

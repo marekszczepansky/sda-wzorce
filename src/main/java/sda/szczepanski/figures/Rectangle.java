@@ -2,6 +2,7 @@ package sda.szczepanski.figures;
 
 public class Rectangle implements Figure {
 
+    public static final String TYPE_NAME = "Prostokąt";
     double sideA;
     double sideB;
 
@@ -18,5 +19,10 @@ public class Rectangle implements Figure {
     @Override
     public double calculateArea() {
         return 2 * (sideA + sideB);
+    }
+
+    @Override
+    public String getType() {
+        return TYPE_NAME;
     }
 }
