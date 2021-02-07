@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// test repozytorium
 class CircleTest {
     public static final int TEST_RADIUS = 5;
 
