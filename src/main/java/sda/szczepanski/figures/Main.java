@@ -1,7 +1,10 @@
 package sda.szczepanski.figures;
 
 import java.io.PrintStream;
+import java.util.Objects;
 import java.util.Scanner;
+
+import static java.util.Objects.nonNull;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,7 +34,11 @@ public class Main {
 
         for (Figure figure : figures) {
             //TODO: prepare output
-            printStream.println("wynik...");
+            if (nonNull(figure)) {
+                printStream.println(figure.prepareDescription());
+            } else {
+                printStream.println("figure is empty");
+            }
         }
     }
 }
