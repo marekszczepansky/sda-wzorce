@@ -1,1 +1,1 @@
-# javapoz28-figures
+# java - wzorce projektowe
