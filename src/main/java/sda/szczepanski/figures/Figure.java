@@ -8,7 +8,6 @@ public interface Figure {
 
     String getType();
 
-    // TODO: prepare implementation
     default String prepareDescription() {
         return "\nFigura: " + getType() +
                 "\npole: " + calculateArea() +
