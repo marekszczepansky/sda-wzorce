@@ -16,24 +16,23 @@ public class Main {
 
         printStream.println("Podaj promień");
         final double radius = scanner.nextDouble();
-        //TODO: create circle
+        figures[0] = new Circle(radius);
 
         printStream.println("Podaj 2 boki trójkąta prostokatnego");
         final double base = scanner.nextDouble();
         final double height = scanner.nextDouble();
-        //TODO: create triangle
+        figures[1] = new RightTriangle(base, height);
 
         printStream.println("Podaj bok kwadratu");
         final double side = scanner.nextDouble();
-        //TODO: create square
+        figures[2] = new Square(side);
 
         printStream.println("Podaj boki prostokąta");
         final double sideA = scanner.nextDouble();
         final double sideB = scanner.nextDouble();
-        //TODO: create rectangle
+        figures[3] = new Rectangle(sideA, sideB);
 
         for (Figure figure : figures) {
-            //TODO: prepare output
             if (nonNull(figure)) {
                 printStream.println(figure.prepareDescription());
             } else {
