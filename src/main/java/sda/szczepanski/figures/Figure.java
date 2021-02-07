@@ -7,7 +7,6 @@ public interface Figure {
 
     // TODO: prepare implementation
     default String prepareDescription() {
-        this.getClass().getSimpleName();
         return "Figura: ****\npole: ****\nobwód: ****";
     }
 }
