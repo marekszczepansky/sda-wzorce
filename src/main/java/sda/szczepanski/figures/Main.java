@@ -5,41 +5,29 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Figure[] figures = new Figure[4];
-        final Logger logger = Logger.getInstance();
 
         Scanner scanner = new Scanner(System.in);
-        logger.writeLine("Podaj promień");
-        figures[0] = new Circle.Builder()
-                .withRadius(scanner.nextDouble())
-                .withColour(Colourable.Colour.RED)
-                .withCoordinates(1, 3)
-                .build();
+        System.out.println("Podaj promień");
+        final double radius = scanner.nextDouble();
+        //TODO: create circle
 
-        logger.writeLine("Podaj 2 boki trójkąta prostokatnego");
-        figures[1] = new RightTriangle.Builder()
-                .withBase(scanner.nextDouble())
-                .withHeight(scanner.nextDouble())
-                .withColour(Colourable.Colour.GREEN)
-                .withCoordinates(-3, -6)
-                .build();
+        System.out.println("Podaj 2 boki trójkąta prostokatnego");
+        final double base = scanner.nextDouble();
+        final double height = scanner.nextDouble();
+        //TODO: create triangle
 
-        FigureFactory redFigureFactory = new FigureFactory(
-                Colourable.Colour.RED,
-                1.0,
-                2.0);
-        logger.writeLine("Podaj bok kwadratu");
-        figures[2] = redFigureFactory.createFigure(
-                FigureFactory.FigureType.SQUARE,
-                scanner.nextDouble());
+        System.out.println("Podaj bok kwadratu");
+        final double side = scanner.nextDouble();
+        //TODO: create square
 
-        logger.writeLine("Podaj boki prostokąta");
-        figures[3] = redFigureFactory.createFigure(
-                FigureFactory.FigureType.RECTANGLE,
-                scanner.nextDouble(),
-                scanner.nextDouble());
+        System.out.println("Podaj boki prostokąta");
+        final double sideA = scanner.nextDouble();
+        final double sideB = scanner.nextDouble();
+        //TODO: create rectangle
 
         for (Figure figure : figures) {
-            logger.writeLine(figure.prepareDescription());
+            //TODO: prepare output
+            System.out.println("wynik...");
         }
     }
 }
