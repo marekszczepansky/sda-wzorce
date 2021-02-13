@@ -12,7 +12,7 @@ Szkolenie wzorce projektowe
 
 # Książki
 * Czysty kod - https://helion.pl/ksiazki/czysty-kod-podrecznik-dobrego-programisty-robert-c-martin,czykov.htm
-* Wzorce prijektowe - Gang of Four (GoF) - https://helion.pl/ksiazki/wzorce-projektowe-elementy-oprogramowania-obiektowego-wielokrotnego-uzytku-erich-gamma-richard-helm-ralph-johnson-john-vli,wzoelv.htm
+* Wzorce projektowe - Gang of Four (GoF) - https://helion.pl/ksiazki/wzorce-projektowe-elementy-oprogramowania-obiektowego-wielokrotnego-uzytku-erich-gamma-richard-helm-ralph-johnson-john-vli,wzoelv.htm
 * Wzorce projektowe - https://helion.pl/ksiazki/wzorce-projektowe-rusz-glowa-eric-freeman-bert-bates-kathy-sierra-elisabeth,wzorvv.htm
 
 # Demo
