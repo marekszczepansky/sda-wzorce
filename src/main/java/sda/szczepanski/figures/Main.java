@@ -30,7 +30,10 @@ public class Main {
         printStream.println("Podaj boki prostokąta");
         final double sideA = scanner.nextDouble();
         final double sideB = scanner.nextDouble();
-        figures[3] = new Rectangle(sideA, sideB);
+        figures[3] = new Rectangle.Builder()
+                .withSideA(sideA)
+                .withSideB(sideB)
+                .build();
 
         for (Figure figure : figures) {
             if (nonNull(figure)) {

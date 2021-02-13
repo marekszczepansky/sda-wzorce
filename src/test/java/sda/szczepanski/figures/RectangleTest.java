@@ -17,7 +17,12 @@ class RectangleTest {
 
     @BeforeEach
     void setUp() {
-        testRectangle = new Rectangle(SIDE_A, SIDE_B);
+        testRectangle = new Rectangle.Builder()
+                .withColour(TEST_COLOUR)
+                .withCoordinates(TEST_X, TEST_Y)
+                .withSideA(SIDE_A)
+                .withSideB(SIDE_B)
+                .build();
     }
 
     @Test
@@ -32,15 +37,11 @@ class RectangleTest {
 
     @Test
     void shouldSetColour() {
-        testRectangle.setColour(TEST_COLOUR);
-
         assertEquals(TEST_COLOUR, testRectangle.getColour());
     }
 
     @Test
     void shouldSetCoordinates() {
-        testRectangle.setCoordinates(TEST_X, TEST_Y);
-
         assertEquals(TEST_X, testRectangle.getX());
         assertEquals(TEST_Y, testRectangle.getY());
     }
