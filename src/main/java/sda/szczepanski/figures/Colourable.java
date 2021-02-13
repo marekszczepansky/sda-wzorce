@@ -2,7 +2,7 @@ package sda.szczepanski.figures;
 
 public interface Colourable {
     enum Colour {
-        REG, GREEN, BLUE
+        RED, GREEN, BLUE
     }
 
     void setColour(Colour colour);
